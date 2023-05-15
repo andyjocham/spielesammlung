@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Andy
+ *
+ */
+module Spielesammlung {
+}
