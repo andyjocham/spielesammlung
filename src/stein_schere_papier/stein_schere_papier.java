@@ -78,8 +78,8 @@ public class stein_schere_papier {
 		System.out.println("+");
 
 		// Print titles
-		System.out.printf("|  %6s  |  %6s  |  %6s  |  %12s  |  %14s  |\n", "WINS", "LOSSES", "TIES", "GAMES PLAYED",
-				"PERCENTAGE WON");
+		System.out.printf("|  %6s  |  %6s  |  %6s  |  %12s  |  %14s  |\n", "Gewonnen", "Verloren", "Unentschieden",
+				"Spiele gespielt", "Prozent gewonnen");
 
 		// Line
 		System.out.print("|");
