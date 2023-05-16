@@ -8,31 +8,34 @@ public class User {
 	private Scanner inputScanner = new Scanner(System.in);
 
 	public boolean playAgain() {
-		System.out.println("Noch eine Runde? ");
+		System.out.println("Noch eine Runde? (J)a (N)ein");
 		String userInput = inputScanner.nextLine();
-		userInput.toUpperCase();
+		userInput = userInput.toUpperCase();
 		return userInput.charAt(0) == 'J';
 	}
 
 	public Move getMove() {
 		// frag nach der Wahl des Users
-		System.out.println("Stein, Schere oder Papier? ");
+		System.out.println("Deine Wahl - Stein, Schere oder Papier? ");
 
 		// Wahl einlesen
 		String userInput = inputScanner.nextLine();
 		userInput = userInput.toUpperCase();
-		if (userInput == "STEIN" || userInput == "SCHERE" || userInput == "PAPIER") {
-			switch (userInput) {
-			case "STEIN":
+		char lastLetter = userInput.charAt(userInput.length() - 1);
+		if (lastLetter == 'N' || lastLetter == 'E' || lastLetter == 'R') {
+			switch (lastLetter) {
+			case 'N':
 				return Move.STEIN;
-			case "SCHERE":
+			case 'E':
 				return Move.SCHERE;
-			case "PAPIER":
+			case 'R':
 				return Move.PAPIER;
 			}
-		}
 
+		}
+		// falsche Eingabe
 		return getMove();
+
 	}
 
 }

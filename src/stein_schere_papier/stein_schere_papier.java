@@ -31,25 +31,25 @@ public class stein_schere_papier {
 	private int numberOfGames = 0;
 
 	public void startGame() {
-		System.out.println("STEIN, SCHERE, PAPIER!");
+		System.out.println("***** SCHNICK, SCHNACK, SCHNUCK! *****");
 		Move userMove = user.getMove();
 		Move computerMove = computer.getmove();
-		System.out.println("\nDu hast " + userMove + " gewählt.");
-		System.out.println("Der Computer wählte " + computerMove + ".\n");
+		System.out.println("\nDu nimmst " + userMove + ".");
+		System.out.println("Der Computer nimmt " + computerMove + ".\n");
 
 		int compareMoves = userMove.compareMoves(computerMove);
 		switch (compareMoves) {
 		case 0: // unentschieden
-			System.out.println("Unentschieden!");
+			System.out.println("Unentschieden!\n");
 			break;
 
 		case 1: // User gewinnt
-			System.out.println(userMove + "schlägt " + computerMove + "Du hast gewonnen!");
+			System.out.println(userMove + " schlaegt " + computerMove + ". Du hast gewonnen!\n");
 			userScore++;
 			break;
 
-		case 2: // Computer gewinnt
-			System.out.println(computerMove + "schlägt " + userMove + "Der Computer hat gewonnen!");
+		case -1: // Computer gewinnt
+			System.out.println(computerMove + " schlaegt " + userMove + ". Der Computer hat gewonnen!\n");
 			computerScore++;
 			break;
 
@@ -72,42 +72,10 @@ public class stein_schere_papier {
 		int ties = numberOfGames - userScore - computerScore;
 		double percentageWon = (wins + ((double) ties) / 2) / numberOfGames;
 
-		// Line
-		System.out.print("+");
-		printDashes(68);
-		System.out.println("+");
-
-		// Print titles
-		System.out.printf("|  %6s  |  %6s  |  %6s  |  %12s  |  %14s  |\n", "Gewonnen", "Verloren", "Unentschieden",
-				"Spiele gespielt", "Prozent gewonnen");
-
-		// Line
-		System.out.print("|");
-		printDashes(10);
-		System.out.print("+");
-		printDashes(10);
-		System.out.print("+");
-		printDashes(10);
-		System.out.print("+");
-		printDashes(16);
-		System.out.print("+");
-		printDashes(18);
-		System.out.println("|");
-
-		// Print values
-		System.out.printf("|  %6d  |  %6d  |  %6d  |  %12d  |  %13.2f%%  |\n", wins, losses, ties, numberOfGames,
-				percentageWon * 100);
-
-		// Line
-		System.out.print("+");
-		printDashes(68);
-		System.out.println("+");
-	}
-
-	private void printDashes(int numberOfDashes) {
-		for (int i = 0; i < numberOfDashes; i++) {
-			System.out.print("-");
-		}
+		System.out.println(numberOfGames + " Runde(n) gespielt.\n");
+		System.out.println("Du hast " + userScore + " x gewonnen und " + computerScore + " x verloren!");
+		System.out.println(+ties + " x mal war es unentschieden, das entspricht einer Gewinnquote von "
+				+ percentageWon * 100 + " %");
 	}
 
 	public static void main(String[] args) {
