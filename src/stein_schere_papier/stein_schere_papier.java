@@ -72,10 +72,10 @@ public class stein_schere_papier {
 		int ties = numberOfGames - userScore - computerScore;
 		double percentageWon = (wins + ((double) ties) / 2) / numberOfGames;
 
-		System.out.println(numberOfGames + " Runde(n) gespielt.\n");
-		System.out.println("Du hast " + userScore + " x gewonnen und " + computerScore + " x verloren!");
-		System.out.println(+ties + " x mal war es unentschieden, das entspricht einer Gewinnquote von "
-				+ percentageWon * 100 + " %");
+		System.out.println("\n" + numberOfGames + " Runde(n) gespielt.\n");
+		System.out.println("Du hast " + userScore + "x gewonnen und " + computerScore + "x verloren!");
+		System.out.println(+ties + "x mal war es unentschieden, das entspricht einer Gewinnquote von "
+				+ percentageWon * 100 + "%");
 	}
 
 	public static void main(String[] args) {
