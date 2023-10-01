@@ -1,4 +1,4 @@
-package stein_schere_papier;
+package drei_gewinnt;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
