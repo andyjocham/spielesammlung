@@ -84,8 +84,8 @@ public class Hangman extends JFrame implements MouseListener {
 		panelSouth.setPreferredSize(new Dimension(500, 100));
 		getContentPane().add(panelSouth, BorderLayout.SOUTH);
 
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setLocationRelativeTo(null);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		// setLocationRelativeTo(null);
 		setSize(600, 700);
 		setResizable(false);
 		reset();
@@ -190,7 +190,6 @@ public class Hangman extends JFrame implements MouseListener {
 		}
 
 		new Hangman(strings);
-
 	}
 
 	@Override

@@ -62,7 +62,7 @@ public class SSP_Frame extends JFrame {
 		label.setPreferredSize(new Dimension(900, 80));
 		getContentPane().add(label, BorderLayout.NORTH);
 
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setSize(900, 900);
 		setLocationRelativeTo(null);
 		setVisible(true);

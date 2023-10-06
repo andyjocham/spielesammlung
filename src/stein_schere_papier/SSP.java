@@ -21,9 +21,6 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 public class SSP extends JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private static final String ROCK = "Stein";
 	private static final String SCISSORS = "Schere";
