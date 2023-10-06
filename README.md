@@ -1,3 +1,3 @@
-# Spielesammlung
+### Spielesammlung
 
 kleine Spielesammlung mit Java
