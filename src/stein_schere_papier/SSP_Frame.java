@@ -11,6 +11,7 @@ import java.util.Random;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -19,7 +20,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-public class SSP extends JPanel {
+public class SSP_Frame extends JFrame {
 
 	/**
 	 * 
@@ -43,28 +44,27 @@ public class SSP extends JPanel {
 	private JPanel panelResult = new JPanel();
 	private JPanel panelChoice = new JPanel();
 	private JPanel panelStatistik = new JPanel();
-	private JPanel panelContent = new JPanel();
 
-	public SSP() {
-		super();
+	public SSP_Frame() {
+		super("Schnick Schnack Schnuck");
 		try {
 			UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-			SwingUtilities.updateComponentTreeUI(SSP.this);
+			SwingUtilities.updateComponentTreeUI(SSP_Frame.this);
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
 				| UnsupportedLookAndFeelException e1) {
 
 			e1.printStackTrace();
 		}
-
-		panelContent.add(makeGameField(), BorderLayout.CENTER);
+		getContentPane().add(makeGameField(), BorderLayout.CENTER);
 		JLabel label = new JLabel("Schnick Schnack Schnuck", JLabel.CENTER);
-		panelContent.setBackground(Color.WHITE);
+		getContentPane().setBackground(Color.WHITE);
 		label.setFont(new Font("Cambria", Font.BOLD, 28));
 		label.setPreferredSize(new Dimension(900, 80));
-		panelContent.add(label, BorderLayout.NORTH);
+		getContentPane().add(label, BorderLayout.NORTH);
 
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(900, 900);
-
+		setLocationRelativeTo(null);
 		setVisible(true);
 
 	}
@@ -288,7 +288,7 @@ public class SSP extends JPanel {
 	}
 
 	public static void main(String[] args) {
-		new SSP();
+		new SSP_Frame();
 
 	}
 }

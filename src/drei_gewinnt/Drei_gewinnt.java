@@ -2,17 +2,15 @@ package drei_gewinnt;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Drei_gewinnt extends JFrame {
+public class Drei_gewinnt extends JPanel {
 
 	/**
 	 * 
@@ -23,19 +21,16 @@ public class Drei_gewinnt extends JFrame {
 	private Color grau = new Color(0xc4c4c4);
 
 	public Drei_gewinnt() {
-		super("3 gewinnt");
-		getContentPane().add(makeGameField(), BorderLayout.CENTER);
+		makeGameField();
+
 		JLabel label = new JLabel("3 gewinnt", JLabel.CENTER);
-		label.setBackground(Color.WHITE);
+		label.setBackground(Color.BLACK);
 		label.setFont(font);
-		label.setPreferredSize(new Dimension(900, 80));
-		getContentPane().add(label, BorderLayout.NORTH);
+//		label.setPreferredSize(new Dimension(0, 0));
 
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(900, 900);
-		setLocationRelativeTo(null);
 		setVisible(true);
-
+		this.add(makeGameField());
+		makeGameField().add(label, BorderLayout.NORTH);
 	}
 
 	public JPanel makeGameField() {
@@ -46,7 +41,7 @@ public class Drei_gewinnt extends JFrame {
 
 		zellen = new JPanel[9];
 		for (int i = 0; i < zellen.length; i++) {
-			zellen[i] = new JPanel(new FlowLayout(FlowLayout.CENTER, 80, 10));
+			zellen[i] = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
 			zellen[i].setBackground(grau);
 			panel.add(zellen[i]);
 		}
@@ -54,7 +49,7 @@ public class Drei_gewinnt extends JFrame {
 
 	}
 
-	public static void main(String[] args) {
-		new Drei_gewinnt();
-	}
+//	public static void main(String[] args) {
+//		new Drei_gewinnt();
+//	}
 }
